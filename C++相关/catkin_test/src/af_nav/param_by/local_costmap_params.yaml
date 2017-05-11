@@ -1,0 +1,101 @@
+local_costmap:
+   global_frame: /map
+   robot_base_frame: base_footprint
+   update_frequency: 10.0
+   publish_frequency: 5.0
+   static_map: false
+   rolling_window: true
+   width: 4.0
+   height: 4.0
+   resolution: 0.05
+   transform_tolerance: 0.5
+   plugins:
+    - {name: static_layer,        type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer,      type: "costmap_2d::ObstacleLayer"}
+    - {name: range_layer,         type: "costmap_2d::ObstacleLayer"}    
+    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}
+
+    
+   inflation_layer:
+      enabled:              true
+      cost_scaling_factor:  4.0  # exponential rate at which the obstacle cost drops off (default: 10)
+      inflation_radius:     1.0  # max. distance from an obstacle at which costs are incurred for planning paths.
+
+   range_layer:
+      enabled:              true
+      max_obstacle_height:  1.0
+      # combination_method:   1
+      track_unknown_space:  true    #true needed for disabling global path planning through unknown space
+      observation_sources: range1 range2 range3 range4 range5 range6 range7 range8
+
+      range1:
+        data_type: LaserScan
+        topic: /range/1
+        marking: false
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+
+      range2:
+        data_type: LaserScan
+        topic: /range/2
+        marking: true
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+
+      range3:
+        data_type: LaserScan
+        topic: /range/3
+        marking: true
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+
+      range4:
+        data_type: LaserScan
+        topic: /range/4
+        marking: false
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+      
+      range5:
+        data_type: LaserScan
+        topic: /range/5
+        marking: false
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+
+      range6:
+        data_type: LaserScan
+        topic: /range/6
+        marking: true
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+
+      range7:
+        data_type: LaserScan
+        topic: /range/7
+        marking: true
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true
+
+      range8:
+        data_type: LaserScan
+        topic: /range/8
+        marking: false
+        clearing: true
+        obstacle_range: 1.0
+        raytrace_range: 4.0
+        inf_is_valid: true

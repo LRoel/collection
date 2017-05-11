@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find af_bringup)/launch/fake_turtlebot.launch" />
+  <include file="$(find af_nav)/launch/fake_amcl.launch" />
+
+</launch>
+
+

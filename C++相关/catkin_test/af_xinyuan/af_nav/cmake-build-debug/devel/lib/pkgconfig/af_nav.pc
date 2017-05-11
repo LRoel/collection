@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_test/af_xinyuan/af_nav/cmake-build-debug/devel
+
+Name: af_nav
+Description: Description of af_nav
+Version: 2.3.6
+Cflags: 
+Libs: -L/home/ros/catkin_test/af_xinyuan/af_nav/cmake-build-debug/devel/lib 
+Requires: tf roscpp sensor_msgs

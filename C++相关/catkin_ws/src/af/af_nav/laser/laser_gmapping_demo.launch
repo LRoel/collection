@@ -1,0 +1,14 @@
+<launch>
+
+  <!-- Run self-filter -->
+  <node name="laser_filter"  pkg="af_nav" type="laser_footprint_filter" />
+ 
+  <!--- Run gmapping -->
+  <include file="$(find af_nav)/config/gmapping_turtlebot.launch" >
+    <arg name="scan_topic" value="scan_filtered" />
+  </include>
+
+  <!--- Run Move Base and Robot Pose EKF -->
+  <include file="$(find af_nav)/laser/move_base_turtlebot_laser.launch" />
+
+</launch>

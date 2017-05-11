@@ -1,0 +1,35 @@
+<launch>
+  <arg name="custom_param_file" default="$(find af_nav)/param/dummy.yaml"/>
+  
+  <node name="urg_node" pkg="urg_node" type="urg_node" args="_ip_address:=192.168.1.10 _ip_port:=10940 _angle_min:=-1.570796327 _angle_max:=1.570796327" />
+
+
+    <!-- We must specify an absolute topic name because if not it will be prefixed by "$(arg camera)".
+         Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 --> 
+
+  <!-- Map amcl server -->
+  <arg name="map_amcl_file" default="$(find af_nav)/maps/map0606.yaml"/>
+  <node name="map_amcl_server" pkg="map_server" type="map_server" args="$(arg map_amcl_file)" >
+  <remap from="map" to="map_amcl"/>
+  </node>
+
+   <!-- Map move_base server -->
+  <arg name="map_move_file" default="$(find af_nav)/maps/map0606_g.yaml"/>
+  <node name="map_move_server" pkg="map_server" type="map_server" args="$(arg map_move_file)" >
+  </node>
+
+  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(find af_nav)/launch/includes/amcl2.launch.xml">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <include file="$(find af_nav)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>
+

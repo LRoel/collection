@@ -1,0 +1,13 @@
+<!-- 
+         Velocity smoother
+-->
+<launch>
+  <node pkg="nodelet" type="nodelet" name="af_nodelet_manager"  args="manager" output="screen"/>  
+  <node pkg="nodelet" type="nodelet" name="navigation_velocity_smoother" args="load yocs_velocity_smoother/VelocitySmootherNodelet af_nodelet_manager">
+    <rosparam file="$(find af_nav)/param/smoother.yaml" command="load"/>
+    <remap from="navigation_velocity_smoother/smooth_cmd_vel" to="/cmd_vel"/>
+
+    <!-- Robot velocity feedbacks; use the default base configuration -->
+    <remap from="navigation_velocity_smoother/odometry" to="/odom"/>
+  </node>
+</launch>

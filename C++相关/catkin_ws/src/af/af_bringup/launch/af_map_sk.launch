@@ -1,0 +1,29 @@
+<launch>
+
+  <!--<node name='af_serial' pkg="af_bringup" type="af_serial_node" />-->
+  <include file="$(find af_bringup)/launch/af_bringup.launch" />
+  
+  <node name='imu_232' pkg="af_bringup" type="gps_232.py" />
+
+  <node name='imu_filter_node' pkg="imu_complementary_filter" type="complementary_filter_node" />
+
+  <!-- pose ekf -->
+
+  <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
+    <param name="output_frame" value="odom"/>
+    <param name="freq" value="30.0"/>
+    <param name="sensor_timeout" value="1.0"/>
+    <param name="odom_used" value="true"/>
+    <param name="imu_used" value="true"/>
+    <param name="vo_used" value="false"/>
+    <param name="gps_used" value="false"/>
+    <param name="debug" value="false"/>
+    <param name="self_diagnose" value="false"/>
+  </node>
+  
+  <include file="$(find af_nav)/launch/gmapping_demo.launch" />
+  
+
+</launch>
+
+

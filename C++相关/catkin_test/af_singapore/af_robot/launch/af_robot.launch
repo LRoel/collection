@@ -1,0 +1,11 @@
+<launch>
+<!--
+  <node name="af_android" pkg="af_robot" type="af_android" respawn="true" />
+-->
+  <node name="af_robot" pkg="af_robot" type="af_robot" respawn="true" />
+
+  <node name="af_path" pkg="af_robot" type="af_path" respawn="true" />
+
+  <node name="af_move" pkg="af_robot" type="af_move" respawn="true" />
+
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+
+  <node name='af_serial' pkg="af_robot" type="af_base" args="_port:=/dev/ttyS1" />-->
+  <include file="$(find af_bringup)/launch/af_bringup.launch" />
+  
+  <node name='fuse' pkg="af_bringup" type="serial_af_v2.py" />
+
+  <include file="$(find af_nav)/launch/amcl_demo.launch" />
+  
+
+</launch>
+
+

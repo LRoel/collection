@@ -1,0 +1,414 @@
+<robot
+  name="af">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.218709072298614 -0.431772239297988 0.0674472129183359"
+        rpy="0 0 0" />
+      <mass
+        value="24.3363284488941" />
+      <inertia
+        ixx="5.62570181000996"
+        ixy="-0.000448380222123052"
+        ixz="-0.0025765723062717"
+        iyy="4.27353779524743"
+        iyz="-0.0240241560959771"
+        izz="4.33459528638605" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_footprint">
+    <inertial>
+      <origin
+        xyz="0.000309062878024985 0.264212146454155 0.033246357934779"
+        rpy="0 0 0" />
+      <mass
+        value="24.336328448894" />
+      <inertia
+        ixx="5.62570181000996"
+        ixy="-0.000448380222123395"
+        ixz="-0.00257657230627196"
+        iyy="4.27353779524743"
+        iyz="-0.0240241560959777"
+        izz="4.33459528638605" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/base_footprint.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_footprint_joint"
+    type="fixed">
+    <origin
+      xyz="0.218400009420589 -0.0342008549835569 -0.695984385752143"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_footprint" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="-1.99132517419987E-08 0.00849211025064245 -0.0846755891838623"
+        rpy="0 0 0" />
+      <mass
+        value="1.33509833516051" />
+      <inertia
+        ixx="0.00355410362980129"
+        ixy="1.22378376617547E-09"
+        ixz="9.6535471996073E-10"
+        iyy="0.00334743905306556"
+        iyz="-0.000293809497950528"
+        izz="0.0020504116054243" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/laser.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/laser.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_laser"
+    type="fixed">
+    <origin
+      xyz="0 0.0959999999999999 0.63439"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel1">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 -8.64808225031766E-12 0.000580365471577249"
+        rpy="0 0 0" />
+      <mass
+        value="8.98461743227603" />
+      <inertia
+        ixx="0.130080916960606"
+        ixy="-6.42666894350783E-19"
+        ixz="-2.16185751813183E-19"
+        iyy="0.130080916960606"
+        iyz="1.71229173655603E-09"
+        izz="0.244990890770521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_wheel1"
+    type="fixed">
+    <origin
+      xyz="0.353838628838196 -0.0882965625925167 0.36689"
+      rpy="1.49011611938477E-08 -1.5707963267949 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="wheel1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel2">
+    <inertial>
+      <origin
+        xyz="0 1.11022302462516E-16 -0.00058036547157736"
+        rpy="0 0 0" />
+      <mass
+        value="8.98461743227602" />
+      <inertia
+        ixx="0.130080916960606"
+        ixy="-2.60208521396521E-18"
+        ixz="-5.3257621862343E-18"
+        iyy="0.130080916960606"
+        iyz="9.77706517217486E-17"
+        izz="0.244990890770521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_wheel2"
+    type="fixed">
+    <origin
+      xyz="0.353805715763312 -0.0884495120400076 -0.21311"
+      rpy="1.5707963267949 -1.50015372541469 -1.5707963267949" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="wheel2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel3">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 1.11022302462516E-16 -0.00058036547157736"
+        rpy="0 0 0" />
+      <mass
+        value="8.98461743227603" />
+      <inertia
+        ixx="0.130080916960606"
+        ixy="0"
+        ixz="-7.77587606891135E-18"
+        iyy="0.130080916960606"
+        iyz="3.26170094800715E-17"
+        izz="0.244990890770521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_wheel3"
+    type="fixed">
+    <origin
+      xyz="-0.356514177677096 -0.0702361627619645 0.36689"
+      rpy="-1.5707963267949 1.40158222314113 -1.5707963267949" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="wheel3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel4">
+    <inertial>
+      <origin
+        xyz="0 0 -0.00058036547157736"
+        rpy="0 0 0" />
+      <mass
+        value="8.98461743227603" />
+      <inertia
+        ixx="0.130080916960606"
+        ixy="-1.73472347597681E-17"
+        ixz="-4.25164920215661E-17"
+        iyy="0.130080916960606"
+        iyz="8.44013632485514E-17"
+        izz="0.244990890770521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/wheel4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_wheel4"
+    type="fixed">
+    <origin
+      xyz="-0.353805715763312 -0.0884495120400078 -0.21311"
+      rpy="-1.5707963267949 1.24838238668424 -1.5707963267949" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="wheel4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0 3.86305971670706E-05 -0.094898938534091"
+        rpy="0 0 0" />
+      <mass
+        value="2.16546911352859" />
+      <inertia
+        ixx="0.00869065878878606"
+        ixy="4.87671638133688E-20"
+        ixz="1.56487753148148E-19"
+        iyy="0.00868378873507113"
+        iyz="6.19448611646946E-06"
+        izz="0.00379796117588403" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://af_bringup/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_camera"
+    type="fixed">
+    <origin
+      xyz="0.00283985812830778 0.962 -0.07611"
+      rpy="-1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

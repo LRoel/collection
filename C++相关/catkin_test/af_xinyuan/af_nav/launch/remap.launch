@@ -1,0 +1,5 @@
+<node pkg="tf" type="tf_remap" name="tf_remapper" output="screen">
+  <rosparam param="mappings">
+    [{old: odom, new: /odom_old}]
+  </rosparam>
+</node>

@@ -1,0 +1,9 @@
+<launch>
+
+
+  <node name="af_serial_node" pkg="af_bringup" type="af_serial_node" />  
+
+
+</launch>
+
+

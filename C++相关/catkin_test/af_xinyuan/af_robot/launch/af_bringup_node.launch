@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="af_bringup_node" pkg="af_bringup" type="af_bringup_node" />
+
+</launch>

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ros/catkin_test/af_xinyuan/af_nav/cmake-build-debug/devel/setup.sh

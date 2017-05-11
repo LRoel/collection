@@ -1,0 +1,6 @@
+[submodule "navigation"]
+	path = navigation
+	url = http://git.lroel.win/lroel/navigation.git
+[submodule "rbx1"]
+	path = rbx1
+	url = http://git.lroel.win/lroel/rbx1.git

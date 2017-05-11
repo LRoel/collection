@@ -1,0 +1,7 @@
+<launch>
+
+  <arg name="port" default="/dev/ttyS0" />
+
+  <node name="af_base" pkg="af_robot" type="af_base" args="_port:=$(arg port)" />
+
+</launch>

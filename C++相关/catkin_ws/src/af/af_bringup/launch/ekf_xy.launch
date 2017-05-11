@@ -1,0 +1,19 @@
+<launch>
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_odom" >
+    <param name="magnetic_declination_radians" value="0.1"/>
+    <param name="yaw_offset" value="0.57"/>
+    <param name="zero_altitude" value="true"/>
+    <param name="broadcast_utm_transform" value="true"/>
+    <param name="publish_filtered_gps" value="true"/>
+  </node>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+    <rosparam command="load" file="$(find af_nav)/params/ekf_xy.yaml" />
+
+   <!--  Placeholder for output topic remapping
+    <remap from="odometry/filtered" to=""/>
+    -->
+
+  </node>
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+  <node name="af_mapping" pkg="af_robot" type="af_mapping"  />
+  
+</launch>

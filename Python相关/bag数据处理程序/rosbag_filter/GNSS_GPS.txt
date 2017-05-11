@@ -1,0 +1,3 @@
+这是一个测试文件
+测试不通过play bag文件而直接对bag文件进行修改的形式
+将 /Gnss_Odom_res1 topic下的数据映射到 ／odom 上

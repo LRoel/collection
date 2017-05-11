@@ -1,0 +1,49 @@
+DWAPlannerROS:
+  # Robot configuration parameters
+  acc_lim_x: 2.5
+  acc_lim_y: 0
+  acc_lim_th: 3.2
+
+  max_vel_x: 0.55
+  min_vel_x: 0.0
+  max_vel_y: 0
+  min_vel_y: 0
+
+  max_trans_vel: 0.55
+  min_trans_vel: 0.1
+
+  max_rot_vel: 1.0
+  min_rot_vel: 0.4
+
+  # Goal Tolerance Parameters
+  yaw_goal_tolerance: 0.05  # 0.05
+  xy_goal_tolerance: 0.10  # 0.10
+  latch_xy_goal_tolerance: false
+
+  # Forward Simulation Parameters
+  sim_time: 1.7
+  sim_granularity: 0.025
+  vx_samples: 3
+  vy_samples: 0
+  vtheta_samples: 20
+  controller_frequency: 20.0
+
+  # Trajectory scoring parameters
+  path_distance_bias: 32.0 # The weighting for how much the controller should stay close to the path it was given
+  goal_distance_bias: 24.0 # The weighting for how much the controller should attempt to reach its local goal, also controls speed
+  occdist_scale: 0.01 # The weighting for how much the controller should attempt to avoid obstacles
+  forward_point_distance: 0.325 # The distance from the center point of the robot to place an additional scoring point, in meters
+  stop_time_buffer: 0.2 # The amount of time that the robot must stop before a collision in order for a trajectory to be considered valid in seconds
+  scaling_speed: 0.25 # The absolute value of the veolicty at which to start scaling the robot's footprint, in m/s
+  max_scaling_factor: 0.2 # The maximum factor to scale the robot's footprint by
+
+  # Oscillation Prevention Parameters
+  oscillation_reset_dist: 0.05 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
+
+  # Debugging
+  publish_traj_pc : true
+  publish_cost_grid_pc: true
+  global_frame_id: odom
+
+  # Global Plan Parameters
+  pure_plan: true

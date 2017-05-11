@@ -1,0 +1,61 @@
+~ip_address (string, default: "") 
+Location of the device on the network (only valid for ethernet devices). If this is left blank or is the empty string, the driver assumes the device is serial and will only attempt to connect using the '~serial_port' and '~serial_baud' parameters. Hokuyo factory IP addresses default to "192.168.0.10". 
+~ip_port (int, default: 10940) 
+IP port number. (1 to 65535) 
+~serial_port (string, default: /dev/ttyACM0) 
+This represents the serial port device (COM4, /dev/tty/USB0). 
+~serial_baud (int, default: 115200) 
+Data transfer rate for a serial device (9600, 115200, and so on) 
+~frame_id (string, default: laser) 
+The frame in which laser scans will be returned. This frame should be at the optical center of the laser, with the x-axis along the zero degree ray, and the y-axis along the 90 degree ray. 
+~calibrate_time (bool, default: false) 
+Whether the node should calibrate the device's time offset on startup. If true, the node will exchange of series of messages with the device in order to determine the time delay in the connection. This calibration step is necessary to produce accurate timestamps on scans. 
+~time_offset (double, default: 0.0) 
+A manually calibrated offset (in seconds) to add to the timestamp before publication of a message. 
+~publish_intensity (bool, default: false) 
+If true, the laser will publish intensity. If false, the laser will not publish intensity to save bandwidth. Should be implemented in hardware if possible, but otherwise may be implemented in software. 
+~publish_multiecho (bool, default: false) 
+If true, a multiecho laserscanner will publish sensor_msgs/MultiEchoLaserScan. If false, the laser will publish sensor_msgs/LaserScan. (If supported by the hardware; otherwise, please use a support library to convert MultiEchoLaserScans to LaserScans.) This parameter is only valid for multiecho laserscanners. 
+~angle_min (double, default: -&pi) 
+Controls the angle of the first range measurement in radians. (If supported by the hardware; it is not recommended to implement this feature in software.) 
+~angle_max (double, default: &pi) 
+Controls the angle of the last range measurement in radians. (If supported by the hardware; it is not recommended to implement this feature in software.) 
+~cluster (int, default: 1) 
+The number of adjacent range measurements to cluster into a single reading; the shortest reading from the cluster is reported. (If supported by the hardware; it is not recommended to implement this feature in software.) 
+~skip (int, default: 0) 
+The number of input messages to skip between each output message. The device will publish 1 message for every N skipped messages. Example: if skip is set to '2', the device will publish 1 message and then 'drop' the following 2 message - a 66.7% reduction in output rate. (If supported by the hardware; it is not recommended to implement this feature in software.) 
+~diagnostics_tolerance (double, default: 0.05) 
+Fractional percent tolerance for published scan frequency to vary from expected. 0.05 is 5%, so for 40Hz it means acceptable limits between 38Hz and 42Hz. 
+~diagnostics_window_time (double, default: 5.0) 
+Number of seconds in which to consider published data to determine publish frequency for diagnostics. 
+
+〜ip_address（string，default：“”）
+设备在网络上的位置（仅对以太网设备有效）。如果此字段留空或是空字符串，则驱动程序假定设备是串行的，并且将只尝试使用'〜serial_port'和'〜serial_baud'参数进行连接。 Hokuyo工厂IP地址默认为“192.168.0.10”。
+〜ip_port（int，default：10940）
+IP端口号。 （1〜65535）
+〜serial_port（string，default：/ dev / ttyACM0）
+这表示串行端口设备（COM4，/ dev / tty / USB0）。
+〜serial_baud（int，default：115200）
+串行设备的数据传输速率（9600，115200等）
+〜frame_id（string，default：laser）
+将返回激光扫描的帧。该框架应该在激光器的光学中心处，其中x轴沿着零度光线，y轴沿着90度光线。
+〜calibrate_time（bool，default：false）
+节点是否应该在启动时校准设备的时间偏移。如果为真，则节点将与设备交换一系列消息以便确定连接中的时间延迟。该校准步骤对于在扫描上产生精确的时间戳是必要的。
+〜time_offset（double，默认值：0.0）
+发布消息之前添加到时间戳的手动校准偏移量（以秒为单位）。
+〜publish_intensity（bool，default：false）
+如果为true，激光将发布强度。如果为假，激光器将不发布强度以节省带宽。如果可能，应在硬件中实现，否则可以在软件中实现。
+〜publish_multiecho（bool，default：false）
+如果为true，multiecho激光扫描仪将发布sensor_msgs / MultiEchoLaserScan。如果为假，激光器将发布sensor_msgs / LaserScan。 （如果硬件支持;否则请使用支持库将MultiEchoLaserScans转换为LaserScan。）此参数仅适用于多回波激光标记。
+〜angle_min（double，默认值： - ＆pi）
+控制第一个测量范围的角度（以弧度表示）。 （如果硬件支持;不建议在软件中实现此功能。）
+〜angle_max（double，default：＆pi）
+控制上一个范围测量的角度（以弧度表示）。 （如果硬件支持;不建议在软件中实现此功能。）
+〜cluster（int，default：1）
+聚类为单一读数的相邻范围测量的数量;报告来自群集的最短读数。 （如果硬件支持;不建议在软件中实现此功能。）
+〜skip（int，default：0）
+在每个输出消息之间跳过的输入消息的数量。设备将为每N个跳过的消息发布1个消息。示例：如果skip设置为“2”，则设备将发布1条消息，然后“放弃”以下2条消息 - 输出速率降低66.7％。 （如果硬件支持;不建议在软件中实现此功能。）
+〜diagnostics_tolerance（double，default：0.05）
+发布的扫描频率的百分比容差与预期不同。 0.05是5％，因此对于40Hz，它意味着在38Hz和42Hz之间的可接受的限制。
+〜diagnostics_window_time（double，默认值：5.0）
+考虑发布的数据以确定诊断的发布频率的秒数。

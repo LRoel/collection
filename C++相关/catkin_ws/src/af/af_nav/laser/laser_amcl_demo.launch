@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Run self-filter -->
+  <node name="laser_filter" pkg="af_nav" type="laser_footprint_filter" />
+
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find af_nav)/maps/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!--- Run AMCL -->
+  <include file="$(find af_nav)/launch/includes/amcl.launch.xml">
+    <arg name="scan_topic" value="scan_filtered" />
+  </include>
+
+  <!--- Run Move Base -->
+  <include file="$(find af_nav)/laser/move_base_laser.launch" />
+
+</launch>

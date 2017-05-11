@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot name="krund">
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_footprint"/>
+        <child link="base_link" />
+    </joint>  
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                   <!-- new mesh -->
+                  <box size="1.224 .844 .23"/>  
+           </geometry>
+           <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+     </link>
+     
+    <joint name="wheel_left_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_left_link"/>
+        <origin xyz="0.00 ${0.23/2} 0.0250" rpy="${-M_PI/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+    <link name="right_leg">
+        <visual>
+            <geometry>
+                <cylinder length="0.6" radius="0.2"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+       </visual>
+    </link>
+
+    <joint name="base_to_right_leg" type="fixed">
+        <parent link="base_link"/>
+        <child link="right_leg"/>
+        <origin xyz="0.22 0 .25"/>
+    </joint>
+    
+      <link name="left_leg">
+        <visual>
+            <geometry>
+                <cylinder length="0.6" radius="0.2"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+       </visual>
+    </link>
+
+    <joint name="base_to_left_leg" type="fixed">
+        <parent link="base_link"/>
+        <child link="left_leg"/>
+        <origin xyz="0.22 0 .25"/>
+    </joint>
+    
+    
+    <link name="base_laser">
+        <visual>
+            <geometry>
+                <cylinder length="0.6" radius="0.2"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+       </visual>
+    </link>
+
+    <joint name="base_to_laser_scan" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_laser"/>
+        <origin xyz="0.22 0 .25"/>
+    </joint>
+  
+</robot>

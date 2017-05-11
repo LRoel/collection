@@ -1,0 +1,4 @@
+geometry_msgs/PoseWithCovarianceStamped initial_pose
+---
+SetPose_resp responce
+

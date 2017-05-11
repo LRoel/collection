@@ -1,0 +1,16 @@
+Header header
+uint16 GPSWeek
+float64 GPSTime
+float64 Heading
+float64 Pitch
+float64 Roll
+float64 Latitude
+float64 Longitude
+float64 Altitude
+float64 Ve
+float64 Vn
+float64 Vu
+float64 Baseline
+uint16 NSV1
+uint16 NSV2
+string Status

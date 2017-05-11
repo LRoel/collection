@@ -1,0 +1,17 @@
+<launch>
+  <param name="/use_sim_time" value="true" />
+
+  <node name="playbag" pkg="rosbag" type="play" args="-r 1 --clock /home/ros/catkin_ws/src/af_vision/sj_v2_12_15.bag" >
+    <remap from="odom" to="/odom_tmp" />
+  </node>
+
+  <node name="odom_tf" pkg="af_bringup" type="odom_tf.py" />
+
+  <include file="$(find af_bringup)/launch/af_urdf.launch"/>
+  
+  <include file="$(find af_nav)/launch/includes/gmapping.launch.xml"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find af_bringup)/rviz/navigation.rviz" />
+
+</launch>

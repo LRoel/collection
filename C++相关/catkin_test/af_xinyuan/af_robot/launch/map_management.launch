@@ -1,0 +1,18 @@
+<!--
+  Right now, the android app is hard coded to look for /cmd_vel as the input
+  topic.
+ -->
+<launch>  
+  
+<!-- Turtlebot -->
+  <!-- Maps -->
+  <arg name="map_file" default="$(find af_nav)/maps/blank_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <!-- World Canvas -->
+  <arg name="debug" default="false"/>
+  <node pkg="world_canvas_server" type="world_canvas_server" name="world_canvas_server" args="$(arg debug)" output="screen">
+    <param name="start_map_manager" value="true"/>
+    <param name="auto_save_map" value="false"/>
+  </node> 
+
+</launch>

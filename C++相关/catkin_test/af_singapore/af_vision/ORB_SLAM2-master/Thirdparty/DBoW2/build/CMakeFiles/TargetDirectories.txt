@@ -1,0 +1,1 @@
+/home/krund/catkin_ws/src/ORB_SLAM2-master/Thirdparty/DBoW2/build/CMakeFiles/DBoW2.dir

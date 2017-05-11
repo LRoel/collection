@@ -1,0 +1,17 @@
+<launch>
+
+  <!--<node name='af_serial' pkg="af_bringup" type="af_serial_node" />-->
+  <include file="$(find af_bringup)/launch/af_bringup.launch" />
+  
+  <node name='gps_232' pkg="af_bringup" type="gps_232.py" />
+
+  <node name='gps_odom' pkg="af_bringup" type="gps_odom.py" />
+
+  <node name='ago_go' pkg="af_bringup" type="ago_go.py" />
+
+  <include file="$(find af_nav)/launch/amcl_gps_mux.launch" />
+  
+
+</launch>
+
+

@@ -1,0 +1,6 @@
+<launch>
+  
+  <include file="$(find af_nav)/launch/includes/gmapping.launch.xml"/>
+
+
+</launch>

@@ -1,0 +1,38 @@
+<launch>
+<!--
+  <arg name="model" />  
+
+  <arg name="gui" default="False" />  
+
+  <param name="robot_description" textfile="$(find af_bringup)/urdf/xy.urdf" />  
+
+  <param name="use_gui" value="$(arg gui)"/>  
+
+  <node name="af_base" pkg="af_robot" type="af_base" args="_port:=/dev/ttyS0" />
+  <node name="af_bringup_node" pkg="af_bringup" type="af_bringup_node" />  
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+      <param name="publish_frequency" type="double" value="20.0" />
+  </node>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+      <param name="publish_frequency" type="double" value="20.0" />
+  </node>  
+
+  <node name="urg_node" pkg="urg_node" type="urg_node" args="_ip_address:=10.0.2.10 _ip_port:=10940 _angle_min:=-1.5 _angle_max:=1.5" />
+
+-->
+
+  <include file="$(find af_robot)/launch/af_base.launch"/>
+
+  <include file="$(find af_robot)/launch/af_bringup_node.launch"/>
+
+  <include file="$(find af_robot)/launch/state_publisher.launch"/>
+
+  <include file="$(find af_robot)/launch/urg_node.launch"/>
+
+  <include file="$(find af_nav)/launch/includes/move_base_by.launch.xml"/>
+
+</launch>
+
+

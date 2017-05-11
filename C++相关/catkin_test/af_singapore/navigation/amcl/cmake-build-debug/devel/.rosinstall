@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ros/catkin_test/src/navigation/amcl/cmake-build-debug/devel/setup.sh

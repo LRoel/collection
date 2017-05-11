@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="model" />
+
+  <arg name="gui" default="False" />
+
+  <param name="robot_description" textfile="$(find af_bringup)/urdf/xy.urdf" />
+
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <arg name="frequency" default="20.0" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="publish_frequency" type="double" value="$(arg frequency)" />
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="publish_frequency" type="double" value="$(arg frequency)" />
+  </node>
+
+</launch>

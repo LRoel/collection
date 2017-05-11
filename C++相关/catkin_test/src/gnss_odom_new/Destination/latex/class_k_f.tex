@@ -1,0 +1,94 @@
+\hypertarget{class_k_f}{\section{K\-F Class Reference}
+\label{class_k_f}\index{K\-F@{K\-F}}
+}
+
+
+{\ttfamily \#include $<$tk\-\_\-kalman.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix\-Xd \hyperlink{class_k_f_a29381c41df77501e7a4682c7c77d3b8b}{kalman\-\_\-init\-Pk} ()
+\item 
+void \hyperlink{class_k_f_ad2bde0feaee5e3cc1738ef72fb6ab4ec}{kalman\-\_\-init\-Hk\-Rk\-\_\-xy} (double \hyperlink{tk__global_8cpp_af26b544e9eeda32659fb48228ac6b97f}{theta}, double lat\-\_\-std, double lon\-\_\-std, \hyperlink{structkf___hk_rk}{kf\-\_\-\-Hk\-Rk} $\ast$H\-R)
+\item 
+void \hyperlink{class_k_f_ad791d37b53fdf46959e88e9410360346}{kalman\-\_\-init\-Hk\-Rk\-\_\-xyh} (double \hyperlink{tk__global_8cpp_af26b544e9eeda32659fb48228ac6b97f}{theta}, \hyperlink{structkf___hk_rk}{kf\-\_\-\-Hk\-Rk} $\ast$H\-R)
+\item 
+void \hyperlink{class_k_f_a7b26242c45364995e91046e2aa764558}{kalman\-\_\-init\-Ft\-Qt} (const double L1, const double L2, const double dx, const double dy, const double \hyperlink{tk__global_8cpp_af26b544e9eeda32659fb48228ac6b97f}{theta}, \hyperlink{structkf___ft_qt}{kf\-\_\-\-Ft\-Qt} $\ast$F\-Q)
+\item 
+void \hyperlink{class_k_f_a0480cab0386f82cead11d9ab907c20df}{kalman\-\_\-update\-\_\-xyh} (Matrix\-Xd Fk, Matrix\-Xd Qk, Matrix\-Xd Pk, Matrix\-Xd Rk, Vector3d Zk, Matrix\-Xd Hk, \hyperlink{structkf___xk_pk}{kf\-\_\-\-Xk\-Pk} $\ast$X\-P)
+\item 
+void \hyperlink{class_k_f_ab9df303e9daa32209e15f7a324a1a2f8}{kalman\-\_\-update\-\_\-xy} (Matrix\-Xd Fk, Matrix\-Xd Qk, Matrix\-Xd Pk, Matrix\-Xd Rk, Vector2d Zk, Matrix\-Xd Hk, \hyperlink{structkf___xk_pk}{kf\-\_\-\-Xk\-Pk} $\ast$X\-P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_k_f_a7b26242c45364995e91046e2aa764558}{\index{K\-F@{K\-F}!kalman\-\_\-init\-Ft\-Qt@{kalman\-\_\-init\-Ft\-Qt}}
+\index{kalman\-\_\-init\-Ft\-Qt@{kalman\-\_\-init\-Ft\-Qt}!KF@{K\-F}}
+\subsubsection[{kalman\-\_\-init\-Ft\-Qt}]{\setlength{\rightskip}{0pt plus 5cm}void K\-F\-::kalman\-\_\-init\-Ft\-Qt (
+\begin{DoxyParamCaption}
+\item[{const double}]{L1, }
+\item[{const double}]{L2, }
+\item[{const double}]{dx, }
+\item[{const double}]{dy, }
+\item[{const double}]{theta, }
+\item[{{\bf kf\-\_\-\-Ft\-Qt} $\ast$}]{F\-Q}
+\end{DoxyParamCaption}
+)}}\label{class_k_f_a7b26242c45364995e91046e2aa764558}
+\hypertarget{class_k_f_ad2bde0feaee5e3cc1738ef72fb6ab4ec}{\index{K\-F@{K\-F}!kalman\-\_\-init\-Hk\-Rk\-\_\-xy@{kalman\-\_\-init\-Hk\-Rk\-\_\-xy}}
+\index{kalman\-\_\-init\-Hk\-Rk\-\_\-xy@{kalman\-\_\-init\-Hk\-Rk\-\_\-xy}!KF@{K\-F}}
+\subsubsection[{kalman\-\_\-init\-Hk\-Rk\-\_\-xy}]{\setlength{\rightskip}{0pt plus 5cm}void K\-F\-::kalman\-\_\-init\-Hk\-Rk\-\_\-xy (
+\begin{DoxyParamCaption}
+\item[{double}]{theta, }
+\item[{double}]{lat\-\_\-std, }
+\item[{double}]{lon\-\_\-std, }
+\item[{{\bf kf\-\_\-\-Hk\-Rk} $\ast$}]{H\-R}
+\end{DoxyParamCaption}
+)}}\label{class_k_f_ad2bde0feaee5e3cc1738ef72fb6ab4ec}
+\hypertarget{class_k_f_ad791d37b53fdf46959e88e9410360346}{\index{K\-F@{K\-F}!kalman\-\_\-init\-Hk\-Rk\-\_\-xyh@{kalman\-\_\-init\-Hk\-Rk\-\_\-xyh}}
+\index{kalman\-\_\-init\-Hk\-Rk\-\_\-xyh@{kalman\-\_\-init\-Hk\-Rk\-\_\-xyh}!KF@{K\-F}}
+\subsubsection[{kalman\-\_\-init\-Hk\-Rk\-\_\-xyh}]{\setlength{\rightskip}{0pt plus 5cm}void K\-F\-::kalman\-\_\-init\-Hk\-Rk\-\_\-xyh (
+\begin{DoxyParamCaption}
+\item[{double}]{theta, }
+\item[{{\bf kf\-\_\-\-Hk\-Rk} $\ast$}]{H\-R}
+\end{DoxyParamCaption}
+)}}\label{class_k_f_ad791d37b53fdf46959e88e9410360346}
+\hypertarget{class_k_f_a29381c41df77501e7a4682c7c77d3b8b}{\index{K\-F@{K\-F}!kalman\-\_\-init\-Pk@{kalman\-\_\-init\-Pk}}
+\index{kalman\-\_\-init\-Pk@{kalman\-\_\-init\-Pk}!KF@{K\-F}}
+\subsubsection[{kalman\-\_\-init\-Pk}]{\setlength{\rightskip}{0pt plus 5cm}Matrix\-Xd K\-F\-::kalman\-\_\-init\-Pk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_k_f_a29381c41df77501e7a4682c7c77d3b8b}
+\hypertarget{class_k_f_ab9df303e9daa32209e15f7a324a1a2f8}{\index{K\-F@{K\-F}!kalman\-\_\-update\-\_\-xy@{kalman\-\_\-update\-\_\-xy}}
+\index{kalman\-\_\-update\-\_\-xy@{kalman\-\_\-update\-\_\-xy}!KF@{K\-F}}
+\subsubsection[{kalman\-\_\-update\-\_\-xy}]{\setlength{\rightskip}{0pt plus 5cm}void K\-F\-::kalman\-\_\-update\-\_\-xy (
+\begin{DoxyParamCaption}
+\item[{Matrix\-Xd}]{Fk, }
+\item[{Matrix\-Xd}]{Qk, }
+\item[{Matrix\-Xd}]{Pk, }
+\item[{Matrix\-Xd}]{Rk, }
+\item[{Vector2d}]{Zk, }
+\item[{Matrix\-Xd}]{Hk, }
+\item[{{\bf kf\-\_\-\-Xk\-Pk} $\ast$}]{X\-P}
+\end{DoxyParamCaption}
+)}}\label{class_k_f_ab9df303e9daa32209e15f7a324a1a2f8}
+\hypertarget{class_k_f_a0480cab0386f82cead11d9ab907c20df}{\index{K\-F@{K\-F}!kalman\-\_\-update\-\_\-xyh@{kalman\-\_\-update\-\_\-xyh}}
+\index{kalman\-\_\-update\-\_\-xyh@{kalman\-\_\-update\-\_\-xyh}!KF@{K\-F}}
+\subsubsection[{kalman\-\_\-update\-\_\-xyh}]{\setlength{\rightskip}{0pt plus 5cm}void K\-F\-::kalman\-\_\-update\-\_\-xyh (
+\begin{DoxyParamCaption}
+\item[{Matrix\-Xd}]{Fk, }
+\item[{Matrix\-Xd}]{Qk, }
+\item[{Matrix\-Xd}]{Pk, }
+\item[{Matrix\-Xd}]{Rk, }
+\item[{Vector3d}]{Zk, }
+\item[{Matrix\-Xd}]{Hk, }
+\item[{{\bf kf\-\_\-\-Xk\-Pk} $\ast$}]{X\-P}
+\end{DoxyParamCaption}
+)}}\label{class_k_f_a0480cab0386f82cead11d9ab907c20df}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/gnss\-\_\-odom/\hyperlink{tk__kalman_8h}{tk\-\_\-kalman.\-h}\item 
+src/\hyperlink{tk__kalman_8cpp}{tk\-\_\-kalman.\-cpp}\end{DoxyCompactItemize}

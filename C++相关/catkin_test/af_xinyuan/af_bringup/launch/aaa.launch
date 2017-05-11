@@ -1,0 +1,17 @@
+<launch>
+
+  <node name='af_serial' pkg="af_robot" type="af_base" args="_port:=/dev/ttyUSB1" />-->
+  <include file="$(find af_bringup)/launch/af_bringup.launch" />
+  
+  <node name='fuse_data_get' pkg="af_bringup" type="serial_af_v2.py" />
+
+  <node name='fuse_data_combined' pkg="af_bringup" type="fuse_G_A.py" />
+
+  <node name='fuse_pub_tf' pkg="tf_test" type="tf_test_node" />
+
+  <include file="$(find af_nav)/launch/amcl_demo_tf.launch" />
+  
+
+</launch>
+
+

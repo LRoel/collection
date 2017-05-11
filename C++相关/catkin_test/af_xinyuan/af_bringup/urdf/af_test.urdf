@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="smartcar">
+
+  <link name="base_link">  
+    <visual>  
+      <geometry>  
+        <box size="0.1224 0.0844 0.0394"/>
+    </geometry>  
+    <origin rpy="0 0 0" xyz="0 0 0.03193"/>  
+    <material name="blue">  
+        <color rgba="0 0 .8 1"/>  
+    </material>  
+    </visual>  
+  </link>
+
+  <link name="base_footprint"/>
+
+    <joint name="base_footprint_joint" type="fixed">
+      <origin xyz="0 0 0.01224" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="base_footprint" />
+  </joint>
+
+  <link name="laser"/>
+    <joint name="laser_joint" type="fixed">
+        <origin xyz="0.0612 0 0.3" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="laser" />
+   </joint>
+
+</robot>

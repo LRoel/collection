@@ -1,0 +1,15 @@
+<launch>
+
+  <arg name="address" default="10.0.2.10" />
+  <arg name="port" default="10940" />
+  <arg name="min" default="-1.5" />
+  <arg name="max" default="1.5" />
+
+  <node name="urg_node" pkg="urg_node" type="urg_node">
+    <param name="ip_address" value="$(arg address)" />
+    <param name="ip_port" value="$(arg port)" />
+    <param name="angle_min" value="$(arg min)" />
+    <param name="angle_max" value="$(arg max)" />
+  </node>
+
+</launch>

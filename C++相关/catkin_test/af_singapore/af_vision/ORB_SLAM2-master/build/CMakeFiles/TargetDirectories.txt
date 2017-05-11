@@ -1,0 +1,6 @@
+/home/krund/catkin_ws/src/af_vision/ORB_SLAM2-master/build/CMakeFiles/ORB_SLAM2.dir
+/home/krund/catkin_ws/src/af_vision/ORB_SLAM2-master/build/CMakeFiles/bin_vocabulary.dir
+/home/krund/catkin_ws/src/af_vision/ORB_SLAM2-master/build/CMakeFiles/mono_kitti.dir
+/home/krund/catkin_ws/src/af_vision/ORB_SLAM2-master/build/CMakeFiles/mono_tum.dir
+/home/krund/catkin_ws/src/af_vision/ORB_SLAM2-master/build/CMakeFiles/rgbd_tum.dir
+/home/krund/catkin_ws/src/af_vision/ORB_SLAM2-master/build/CMakeFiles/stereo_kitti.dir
